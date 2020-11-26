@@ -25,7 +25,7 @@ SECRET_KEY = '5x%az=^3nz()6tz*)=$n-)6a#$v2m+dv1@%^+o$=zg1jlbfqm&'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = False
 
-ALLOWED_HOSTS = ['sportspot-app.herokuapp.com', '127.0.0.1']
+ALLOWED_HOSTS = ['sportspot-app.herokuapp.com']
 
 
 # Application definition
