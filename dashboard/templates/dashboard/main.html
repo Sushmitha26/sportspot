@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+{% load static %}
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+
+    <title>SquareAway</title>
+    <meta name="keywords" content="" />
+    <meta name="description" content="" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1" />
+    
+    <link href="http://fonts.googleapis.com/css?family=Source+Sans+Pro:200,300,400,600,700,900|Open+Sans:400,300,600,700,800" rel="stylesheet" />
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+
+    <!--font awesome css-->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+    <!-- jQuery library -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+    <!-- Latest compiled JavaScript -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+
+    <!--popper.js-->
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+
+    <link rel="stylesheet" type="text/css" href="{% static 'css/main.css' %}">
+    <link rel="stylesheet" type="text/css" href="{% static 'css/fonts.css' %}">
+
+</head>
+
+<style>
+    .active {
+        background-color:#7BDB99;
+    }
+    .hide{
+        display: none;
+    }
+    
+</style>
+
+<body>
+    <div id="logo" class="hero">
+        <h1><a href="#" class="icon icon-spinner"><span>SportSpot</span></a></h1>
+    </div>
+    <div id="header">
+        <div id="menu" class="container">
+        
+            <ul>
+                <li><a href="{% url 'dashboard' %}" {% if request.path == '/dashboard/' %}class="active"{% endif %} accesskey="1">Home</a></li>
+                <li class="nav-item dropdown {{home_page}}">
+                    <a class="nav-link dropdown-toggle" href="" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    View   <i class="fa fa-caret-down"></i>
+                    </a>
+                    <div id="dd" class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                    <a class="dropdown-item" href="{% url 'mentors' %}">Mentor Details</a>
+                    <a class="dropdown-item" href="{% url 'shorlisted' %}">Shortlisted</a>
+                    <a class="dropdown-item" href="{% url 'events' %}">Upcoming events</a>
+                    </div>
+                </li>
+                <li><a href="{% url 'gallery' %}" {% if request.path == '/dashboard/gallery' %}class="active"{% endif %} accesskey="3" title="">Gallery</a></li>
+                <li {% if request.path != '/dashboard/' %}class="hide"{% endif %}><a id="movedown">About Us</a></li>
+                <li><a href="{% url 'logout' %}" accesskey="5" title="">Sign out</a></li>
+            </ul>
+        </div>
+    </div>
+
+    {% block content %}
+
+    {% endblock content %}
+    
+</body>
+</html>
+
