@@ -81,8 +81,8 @@ DATABASES = {
         'NAME': 'sportspot',
         'HOST': '127.0.0.1',
         'PORT': '3306',
-        'USER': 'Sushmitha',
-        'PASSWORD': 'PATELgowda9.8',
+        'USER': '',
+        'PASSWORD': '',
     }
 }
 
